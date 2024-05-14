@@ -1,0 +1,149 @@
+[gd_scene load_steps=10 format=3 uid="uid://c3awvylkg5rs5"]
+
+[ext_resource type="PackedScene" uid="uid://bpkjjqqe6hudm" path="res://Assets/Prefabs/player.tscn" id="1_jqt1o"]
+[ext_resource type="Texture2D" uid="uid://dvoouqquc6h7i" path="res://Assets/Art/Enviroment/Basic.png" id="2_ygt85"]
+[ext_resource type="PackedScene" uid="uid://b755vvo6i7hd6" path="res://Assets/Prefabs/platform.tscn" id="3_mhoqy"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1jg5d"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0p0sy"]
+texture = ExtResource("2_ygt85")
+texture_region_size = Vector2i(10, 10)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, 5, -5, 5, 5, -5, 5)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, 5, -5, 5, 5, -5, 5)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, 5, -5, 5, 5, -5, 5)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, 5, -5, 5, 5, -5, 5)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, 5, -5, 5, 5, -5, 5)
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, 5, -5, 5, 5, -5, 5)
+0:7/0 = 0
+0:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:7/0/physics_layer_0/angular_velocity = 0.0
+1:7/0 = 0
+1:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:7/0/physics_layer_0/angular_velocity = 0.0
+2:7/0 = 0
+2:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:7/0/physics_layer_0/angular_velocity = 0.0
+0:8/0 = 0
+0:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:8/0/physics_layer_0/angular_velocity = 0.0
+1:8/0 = 0
+1:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:8/0/physics_layer_0/angular_velocity = 0.0
+2:8/0 = 0
+2:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:8/0/physics_layer_0/angular_velocity = 0.0
+0:9/0 = 0
+0:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:9/0/physics_layer_0/angular_velocity = 0.0
+1:9/0 = 0
+1:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:9/0/physics_layer_0/angular_velocity = 0.0
+2:9/0 = 0
+2:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:9/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, 5, -5, 5, 5, -5, 5)
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, 5, -5, 5, 5, -5, 5)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, 5, -5, 5, 5, -5, 5)
+
+[sub_resource type="TileSet" id="TileSet_0ui70"]
+tile_size = Vector2i(10, 10)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_0p0sy")
+
+[sub_resource type="Animation" id="Animation_q3cc6"]
+resource_name = "Move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(128, -16), Vector2(24, -16)]
+}
+
+[sub_resource type="Animation" id="Animation_mm7a1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(128, -16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jlwqj"]
+_data = {
+"Move": SubResource("Animation_q3cc6"),
+"RESET": SubResource("Animation_mm7a1")
+}
+
+[node name="World" type="StaticBody2D"]
+
+[node name="WorldCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 80)
+shape = SubResource("WorldBoundaryShape2D_1jg5d")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_0ui70")
+rendering_quadrant_size = 10
+format = 2
+layer_0/tile_data = PackedInt32Array(196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 196605, 0, 0, 196603, 0, 0, 196604, 0, 0, 131076, 0, 0, 131077, 0, 0, 196600, 0, 0, 196601, 0, 0, 196602, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 262136, 0, 1, 262137, 0, 1, 262138, 0, 1, 262139, 0, 1, 262140, 0, 1, 262141, 0, 1, 262142, 0, 1, 262143, 0, 1, 196608, 0, 1, 196609, 0, 1, 196610, 0, 1, 196611, 0, 1, 196612, 0, 1, 196613, 0, 1, 196614, 0, 1, 196615, 0, 1, 196616, 0, 1, 196617, 0, 1, 131067, 0, 9, 65531, 0, 8, -5, 0, 7, 131068, 0, 9, 65532, 0, 8, -4, 0, 8, -65540, 0, 8, -131076, 0, 7, -65539, 0, 7, -3, 0, 8, 65533, 0, 8, 131069, 0, 9, 196596, 0, 0, 196595, 0, 0, 196594, 0, 0, 196593, 0, 0, 262129, 0, 1, 262130, 0, 1, 262132, 0, 1, 262131, 0, 1, 327667, 0, 1, 327668, 0, 1, 393203, 0, 1, 393204, 0, 1, 458739, 0, 1, 458740, 0, 1, 524275, 0, 1, 524276, 0, 1, 524277, 0, 2, 524278, 0, 2, 524279, 0, 2, 524280, 0, 2, 524281, 0, 2, 524282, 0, 2, 524283, 0, 2, 524284, 0, 2, 524285, 0, 2, 524286, 0, 2, 524287, 0, 2, 458752, 0, 2, 458753, 0, 2, 458754, 0, 2, 458755, 0, 2, 458756, 0, 2, 458757, 0, 2, 458758, 0, 2, 458759, 0, 2, 458760, 0, 2, 458761, 0, 2, 458762, 0, 2, 458763, 0, 2, 458764, 0, 2, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 196621, 0, 1, 196622, 0, 1, 196623, 0, 1, 262157, 0, 1, 327693, 0, 1, 393229, 0, 1, 458765, 0, 1, 458766, 0, 1, 393230, 0, 1, 327694, 0, 1, 262158, 0, 1, 589811, 0, 1, 589812, 0, 1, 589813, 0, 1, 589814, 0, 1, 589815, 0, 1, 589816, 0, 1, 589817, 0, 1, 589818, 0, 1, 589819, 0, 1, 589820, 0, 1, 589821, 0, 1, 589822, 0, 1, 589823, 0, 1, 524288, 0, 1, 524289, 0, 1, 524290, 0, 1, 524291, 0, 1, 524292, 0, 1, 524293, 0, 1, 524294, 0, 1, 524295, 0, 1, 524296, 0, 1, 524297, 0, 1, 524298, 0, 1, 524299, 0, 1, 524300, 0, 1, 524301, 0, 1, 524302, 0, 1)
+
+[node name="Node2D" parent="." instance=ExtResource("1_jqt1o")]
+SPEED = 200.0
+JUMP_VELOCITY = -300.0
+
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
+offset = Vector2(0, -30)
+zoom = Vector2(3, 3)
+
+[node name="Platform" parent="." instance=ExtResource("3_mhoqy")]
+position = Vector2(128, -16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform"]
+libraries = {
+"": SubResource("AnimationLibrary_jlwqj")
+}
+autoplay = "Move"
+
+[node name="Platform2" parent="." instance=ExtResource("3_mhoqy")]
+position = Vector2(-96, 40)
