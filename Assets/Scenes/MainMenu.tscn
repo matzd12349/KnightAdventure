@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://c6fhxr2sq03mh"]
 
 [ext_resource type="Texture2D" uid="uid://tad53tpmegrn" path="res://Assets/Art/UI/Start_Temp.png" id="1_6p6y7"]
-[ext_resource type="Script" path="res://Assets/Scenes/MainMenu.gd" id="1_8nrvu"]
+[ext_resource type="Script" path="res://Assets/Scripts/MainMenu.gd" id="1_8nrvu"]
 [ext_resource type="Texture2D" uid="uid://ch47aqblrwuyb" path="res://Assets/Art/UI/Title_01.png" id="2_go4tl"]
 [ext_resource type="Texture2D" uid="uid://vbadlwy3i280" path="res://Assets/Art/UI/Title_02.png" id="3_6u5pw"]
 [ext_resource type="Texture2D" uid="uid://nqi0d007nv83" path="res://Assets/Art/UI/Selector.png" id="4_s56nn"]
@@ -104,8 +104,8 @@ theme_override_font_sizes/font_size = 50
 text = "Play Game"
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = -2
-visible_ratio = -0.25
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Exit" type="Label" parent="."]
 offset_left = -122.0

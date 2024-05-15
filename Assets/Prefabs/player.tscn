@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpkjjqqe6hudm"]
 
-[ext_resource type="Script" path="res://PlayerMovmement.gd" id="1_nnict"]
+[ext_resource type="Script" path="res://Assets/Scripts/PlayerMovmement.gd" id="1_nnict"]
 [ext_resource type="Texture2D" uid="uid://cy8bnsbhusx2q" path="res://Assets/Art/Player/Player.png" id="2_6q0av"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qfla8"]
@@ -20,6 +20,7 @@ height = 20.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 10
+collision_layer = 2
 script = ExtResource("1_nnict")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
