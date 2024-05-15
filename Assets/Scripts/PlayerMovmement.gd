@@ -4,6 +4,9 @@ extends CharacterBody2D #Top node
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
 
+#reference to animated sprite node
+@onready var anim2d = $AnimatedSprite2D
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -19,6 +22,14 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("Left", "Right") #Left/right in input options
+
+	#flip sprite
+	if direction > 0:
+		anim2d.flip_h = false
+	elif direction < 0:
+		anim2d.flip_h = true
+
+	#movement
 	if direction:#direction as above
 		velocity.x = direction * SPEED#direction and speed by velocity.
 	else:
